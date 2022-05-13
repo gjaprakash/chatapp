@@ -11,7 +11,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import { HostDirective } from './host.directive';
-
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,8 @@ import { HostDirective } from './host.directive';
     BrowserAnimationsModule,
     MatInputModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   entryComponents: [ChatPersonComponent],
   providers: [],
