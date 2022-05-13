@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+p, a, h1, h2, h3, h4, h5, h6, span, button{
+    font-family: 'Poppins', sans-serif;
+}
+.chat-window p{
+    margin: 0px 0px 0px 10px;
+}
+
+.header{
+    margin: 20px 0px 0px 0px;
+}
+button span{
+    font-size: 14px;
+    font-weight: 400;
+}
+.float-right{
+    float: right;
+}
+button{
+    border-radius: 100px!important;
+    background: #6401ee!important;
+}
+.header button{
+    margin: 20px 0px;
+}
+.material-icons {
+    font-size: 22px;
+}
+/* chat person comp */
+.mat-form-field{
+    width: 100%;
+}
+textarea{
+    min-height: 75px;
+}
+
+button.send{
+    background: #01dac5!important;
+    margin-bottom: 30px;
+}
+.direction-column{    flex-direction: column;
+    max-height: 750px;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+/* textarea */
+.mat-form-field-underline {
+    bottom: 0em!important; 
+}
+.mat-form-field-wrapper {
+    padding-bottom: 0em!important;
+}
+.mat-form-field {
+    margin-bottom: 10px;
+}
+/* textarea */
