@@ -1,8 +1,8 @@
 <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>{{data}}</mat-label>
-    <textarea matInput placeholder="Write your Message"></textarea>
+    <textarea matInput placeholder="Write your Message" name="textarea" id="textarea" [(ngModel)]="chatmsg"></textarea>
 </mat-form-field>
-<button class="float-right send" mat-raised-button>
+<button class="float-right send" mat-raised-button (click)="sendMessage()">
     <mat-icon aria-hidden="false" aria-label="Example add icon">chevron_right</mat-icon>
     Send
 </button>

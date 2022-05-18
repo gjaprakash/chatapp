@@ -2,6 +2,8 @@ import { Component, ViewChild,Inject, ViewContainerRef,ComponentFactoryResolver,
 import { HostDirective } from './host.directive';
 import { ChatPersonComponent } from './chat-person/chat-person.component';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Subject } from 'rxjs';
+import { Service } from './service'
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,7 @@ export class AppComponent {
   countChatComponent = 0;
 
   comp = ChatPersonComponent;
-  data = 'Person ';
+  data = '';
 
   @ViewChild('view', { read: ViewContainerRef })
   view!: ViewContainerRef;
@@ -24,7 +26,7 @@ export class AppComponent {
   chatComponent = ChatPersonComponent
 
   constructor(public factortRes:
-  ComponentFactoryResolver,public dialog: MatDialog){
+  ComponentFactoryResolver,public dialog: MatDialog, private messageService: Service){
   }
 
   openDialog() {
@@ -51,7 +53,8 @@ export class AppComponent {
           this.factortRes.resolveComponentFactory(this.chatComponent);
         let componentRef: ComponentRef<typeof comp> =
           this.view.createComponent(componentFactory);
-        componentRef.instance.data = data+this.countChatComponent;
+        data = "Person "+this.countChatComponent;
+        componentRef.instance.data = data;
       }, 0);
     }
     else{
@@ -66,7 +69,7 @@ export class AppComponent {
 
 @Component({
   selector: 'dialog-data-example-dialog',
-  template: '<p>Only 9 chats allowed</p>',
+  template: '<p>Only 9 chats allowed</p>  . ',
 })
 export class DialogDataExampleDialog {
   constructor(@Inject(MAT_DIALOG_DATA) public data: AppComponent) {}

@@ -3,17 +3,20 @@
         <p>Chat Window</p>
         <mat-card>
             <mat-list role="list">
-                <mat-list-item role="listitem">
-                    <mat-icon matListIcon aria-hidden="false" aria-label="bookmark">bookmark</mat-icon>
-                    <p matLine>Person 1</p>
-                    <p matLine >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <mat-divider></mat-divider>
-                </mat-list-item>
-                <mat-list-item role="listitem">
-                    <mat-icon matListIcon aria-hidden="false" aria-label="bookmark">bookmark</mat-icon>
-                    <p matLine>Person 1</p>
-                    <p matLine >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </mat-list-item>
+                <div *ngFor="let message of messages">
+                    <mat-list-item role="listitem">
+                        <mat-icon matListIcon aria-hidden="false" aria-label="bookmark">bookmark</mat-icon>
+                        <p matLine>{{message.person}}</p>
+                        <p matLine >{{message.text}}</p>
+                        <mat-divider></mat-divider>
+                    </mat-list-item>
+                </div>
+                
+                    <button class="float-right" mat-raised-button color="primary" (click)="clearMessages()">
+                      <mat-icon aria-hidden="false" aria-label="Example add icon">delete</mat-icon>
+                      Clear chat window
+                    </button>
+               
               </mat-list>
         </mat-card>
     </div>

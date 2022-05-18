@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-
+import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +12,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import { HostDirective } from './host.directive';
 import {MatDialogModule} from '@angular/material/dialog';
+import { Service } from './service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,10 +28,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatInputModule,
     MatCardModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ],
   entryComponents: [ChatPersonComponent],
-  providers: [],
+  providers: [ Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
