@@ -17,7 +17,9 @@ export class Service {
                 person: datam.person,
                 text: datam.message
 
+
          });
+         
             // return this.data;
     }
 
@@ -32,7 +34,7 @@ export class Service {
     
 
 }
-export interface chatObj{
+export interface chatObj {
     person : string;
     message : string;
 }

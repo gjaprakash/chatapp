@@ -57,7 +57,7 @@ export class AppComponent {
         componentRef.instance.data = data;
       }, 0);
     }
-    else{
+    else {
       this.openDialog();
     }
     
