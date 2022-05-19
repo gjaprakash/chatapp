@@ -1,13 +1,24 @@
 import { Injectable } from '@angular/core';
+// import { Interface } from 'readline';
 import { Observable, Subject } from 'rxjs';
 
+
+
 @Injectable({ providedIn: 'root' })
+
 export class Service {
+
+   
     private subject = new Subject<any>();
 
 
-    sendMessage(personmsg:string, message: string) {
-        this.subject.next({ person: personmsg,text: message });
+    sendMessage(datam:chatObj) {
+        this.subject.next({ 
+                person: datam.person,
+                text: datam.message
+
+         });
+            // return this.data;
     }
 
     clearMessages() {
@@ -20,4 +31,8 @@ export class Service {
     }
     
 
+}
+export interface chatObj{
+    person : string;
+    message : string;
 }
