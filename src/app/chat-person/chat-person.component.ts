@@ -11,16 +11,13 @@ import { Service, chatObj } from '../service'
 export class ChatPersonComponent implements OnInit {
 
   chatmsg = "";
-  
   data!: String;
-  //  @Input('data')
-  // data!: string;
 
-   private output = new Subject<string>();
+
+  private output = new Subject<string>();
  
   constructor(private elementRef: ElementRef, private messageService: Service) { 
 
-    
     this.data = this.messageService.data;
   }
 
@@ -35,6 +32,5 @@ export class ChatPersonComponent implements OnInit {
       this.messageService.sendMessage(chatobj);
       
     }
-
   }
 }

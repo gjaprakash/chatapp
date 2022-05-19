@@ -10,7 +10,6 @@ import { Service } from '../service';
 export class ChatListComponent implements OnInit {
  
   messages: any[] = [];
-  // persons:string[] = [];
   subscription!: Subscription;
   
   constructor(private messageService: Service) {
@@ -22,15 +21,6 @@ export class ChatListComponent implements OnInit {
         this.messages = [];
       }
     });
-
-    // this.subscription = this.messageService.getMessage().subscribe(getMessage => {
-    //   if (getMessage) {
-    //     this.persons.push(getMessage);
-    //   } else {
-    //     // clear messages when empty message received
-    //     this.persons = [];
-    //   }
-    // });
 
    }
 
