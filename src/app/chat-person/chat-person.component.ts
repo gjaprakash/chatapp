@@ -25,12 +25,9 @@ export class ChatPersonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.data = this.messageService.data;
   }
   sendMessage(): void {
     if(this.chatmsg !=""){
-      
-
       const chatobj:chatObj = {
         person : this.data ,
         message : this.chatmsg
