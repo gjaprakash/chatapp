@@ -5,7 +5,7 @@
         <h3>Simple chat Application</h3>
       </div>
       <div class="col-lg-6">
-        <button class="float-right" mat-raised-button color="primary" (click)="loadComponent(comp, data)">
+        <button class="float-right" mat-raised-button color="primary" (click)="loadComponent()">
           <mat-icon aria-hidden="false" aria-label="Example add icon">add</mat-icon>
           Add new person
         </button>
@@ -15,7 +15,9 @@
   <div class="row">
     <div class="col-lg-8">
       <div class="row direction-column">
-        <ng-template #view host></ng-template>
+          <div class="col-lg-4" *ngFor="let compcount of compcounts">
+            <app-chat-person ></app-chat-person>
+          </div>
       </div>
     </div>
     <div class="col-lg-4">

@@ -8,9 +8,12 @@ import { Observable, Subject } from 'rxjs';
 
 export class Service {
 
-   
+    data!: String;
     private subject = new Subject<any>();
 
+    person(data: String) {
+        this.data = data;         
+    }
 
     sendMessage(datam:chatObj) {
         this.subject.next({ 
@@ -35,6 +38,6 @@ export class Service {
 
 }
 export interface chatObj {
-    person : string;
-    message : string;
+    person : String;
+    message : String;
 }

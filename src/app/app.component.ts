@@ -16,7 +16,8 @@ export class AppComponent {
   countChatComponent = 0;
 
   comp = ChatPersonComponent;
-  data = '';
+  data!: String;
+  compcounts: any[] = [];
 
   @ViewChild('view', { read: ViewContainerRef })
   view!: ViewContainerRef;
@@ -38,24 +39,21 @@ export class AppComponent {
   }
 
   ngAfterViewInit() {
-    this.loadComponent(this.comp, this.data);
+    //  this.loadComponent();
   }
 
-  loadComponent(comp: any, data: string){
+  loadComponent(){
 
-
+    
+    
     // this.childRef.viewRef.clear();
     this.countChatComponent++;
-    console.log(this.countChatComponent);
+    
     if(this.countChatComponent <= 9){
-      setTimeout(() => {
-        let componentFactory =
-          this.factortRes.resolveComponentFactory(this.chatComponent);
-        let componentRef: ComponentRef<typeof comp> =
-          this.view.createComponent(componentFactory);
-        data = "Person "+this.countChatComponent;
-        componentRef.instance.data = data;
-      }, 0);
+      this.compcounts.push(this.countChatComponent)
+      this.data ="Person "+this.countChatComponent;
+      this.messageService.person(this.data);
+    console.log(this.compcounts);
     }
     else {
       this.openDialog();
